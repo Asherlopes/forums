@@ -1,0 +1,20 @@
+<?php
+      if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+  echo '<form class="form-inline my-2 my-lg-0" method="get" action="search.php">
+    <input class="form-control mr-sm-2" name="search" type="search" actiion="search.php" placeholder="Search" aria-label="Search">
+    <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+      <p class="text-light my-0 mx-2">Welcome '. $_SESSION['user_email']. ' </p>
+      <a href="partials/_logout.php" class="btn btn-outline-success ml-2">Logout</a>
+      </form>';
+}
+else{ 
+  echo '<form class="d-flex" action="search.php" method="get">
+  <input class="form-control me-2" type="search" placeholder="Search" name ="search" aria-label="Search">
+  <button class="btn btn-outline-success me-2" type="submit">Search</button>
+</form>
+<a href="#"  button class="btn btn-success me-2" type="submit" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up</button></a>
+<a href="#"  button class="btn btn-success me-2" type="submit" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button></a>
+';}
+
+?>
+
